@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="SignUpForm.css">
+    <title>Document</title>
+    <style>
+        .parent{
+            display: flex;
+            width: 100%;
+            /* border: 2px solid; */
+        }
+        .second{
+            /* border: 5px solid red; */
+            width: 50%;
+            height: 200px;
+        }
+        .ps{
+  height: 100px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="ps">
+
+    </div>
+
+    <div class="parent">
+    <div class="login-box">
+        <h1>Paytm Mall</h1>
+  <h4>Sign Into Your Account</h4>
+        <form>
+            <label >Email</label>
+            <input type="email" id="email">
+
+            <label >Password</label>
+            <input type="password" id="password">
+
+            
+
+            <input type="submit" value="SignUp">
+        </form>
+    
+    <p class="para-2">Not have an account? <a href="SignUpForm.html">Sign Up  Here</a></p>
+</div>
+<div class="second">
+    <h1 class="text-1">Welcome to Paytm Mall</h1>
+    <p class="text-2">Paytm Mall strives hard to make your online shopping a more pleasant and cost-effective
+      experience by providing the top quality products at the best price rates in India. Our collection of products
+      consist of electronic appliances, clothes, grocery, home and kitchen products, backpacks, automobiles, books and
+      stationery, to name a few.</p>
+</div>
+</div>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",loginFun)
+    var userData =JSON.parse(localStorage.getItem("SignData"))
+
+    function loginFun (){
+        let flag=false
+
+        event.preventDefault();
+        var loginEmail=document.querySelector("#email").value;
+        var loginPass=document.querySelector("#password").value;
+
+        for(var i=0; i<userData.length;i++){
+            if(userData[i].email==loginEmail && userData[i].password == loginPass){
+                flag=true;
+                break
+            }
+        }
+        if (flag){
+            alert("login Successful")
+            window.location.href = "index.html"
+           
+        } else {
+            alert("Incorrect username or password");
+        }
+    }
+</script>

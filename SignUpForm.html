@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="SignUpForm.css">
+    <title>Document</title>
+    <style>
+             .parent{
+            display: flex;
+            width: 100%;
+            /* border: 2px solid; */
+        }
+        .second{
+            /* border: 5px solid red; */
+            width: 50%;
+            height: 200px;
+            margin-top: 160px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+    <div class="SignUp-box">
+        <img src=" https://static.india.com/wp-content/uploads/2019/07/Paytm-Mall-IANS.jpg" alt="">
+        <h1>Creat Your Account</h1>
+        <form >
+            <label>Full Name</label>
+            <input type="text" id="name" placeholder="">
+
+            <label >Email</label>
+            <input type="email" id="email">
+
+            <label >Password</label>
+            <input type="password" id="password">
+
+            <label  > Confirm Password</label>
+            <input type="co_password" id="co_password">
+
+            <input type="submit" value="SignUp">
+        </form>
+
+        <p>By clicking the Sign Up button,you agree to our <br>
+       <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a> </p> <br/>
+       <p class="para-2">Already have an account? <a href="LoginForms.html">Login here</a> </p>
+    </div>
+ 
+    <div class="second">
+        <h1 class="text-1">Welcome to Paytm Mall</h1>
+    <p class="text-2">Paytm Mall strives hard to make your online shopping a more pleasant and cost-effective
+      experience by providing the top quality products at the best price rates in India. Our collection of products
+      consist of electronic appliances, clothes, grocery, home and kitchen products, backpacks, automobiles, books and
+      stationery, to name a few.</p>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",signUpFun)
+
+    var userData =JSON.parse(localStorage.getItem("SignData"))||[]
+
+function signUpFun(){
+    event.preventDefault();
+
+    let obj={
+        name:document.querySelector("#name").value,
+        email:document.querySelector("#email").value,
+        password:document.querySelector("#password").value,
+        confirmpassword:document.querySelector("#co_password").value
+
+    }
+
+    if(obj.password==obj.confirmpassword){
+        alert("SignUp Successful" );
+        userData.push(obj)
+        localStorage.setItem("SignData",JSON.stringify(userData));
+        window.location.href="LoginForms.html";
+    }else{
+        alert("Password and Confirm Password should be same")
+    }
+}
+</script>
