@@ -366,7 +366,7 @@ jewellery.map(function(el){
 
     cards.addEventListener("click", myFun);
     function myFun() {
-        window.location.href = el.url;
+        // window.location.href = el.url;
     };
 
     var div1 = document.createElement("div")

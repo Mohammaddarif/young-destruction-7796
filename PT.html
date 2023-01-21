@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+  />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"> -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500&family=Poppins:wght@300;400;500;600&family=Work+Sans:wght@900&display=swap');
+
+        #crusel-1 {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+            text-align: center;
+
+        }
+       
+        #crusel-1 img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .child {
+            border: 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- <div id="carousel-container">
+        <div id="c1">
+            <div id="carouselExampleControlsNoTouching1" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div id="c1s1"></div>
+                  </div>
+                 </div> -->
+
+
+    
+        <div id="crusel-1">
+
+     -->
+
+
+        </div>
+
+</body>
+
+</html>
+<script>
+
+    var c1 = [
+        {
+            id: "1",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/710342/1620736738312.jpg?imwidth=140&impolicy=hq",
+            name: "Central",
+            tooltip: "Central",
+            url: "central.html"
+        },
+
+        {
+            id: "2",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/498075/1593586492547.jpg?imwidth=140&impolicy=hq",
+            name: "Myntra",
+            tooltip: "Myntra",
+            url: "myntra.html"
+        },
+
+        {
+            id: "3",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/498074/1613028372599.jpg?imwidth=140&impolicy=hq", name: "Pantaloons", tooltip: "Pantaloons", url: "pantaloons.html"
+        },
+
+        {
+            id: "4",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/498078/1620736180986.jpg?imwidth=140&impolicy=hq", name: "Lifestyle", tooltip: "Lifestyle", url: "lifestyle.html"
+        },
+
+        {
+            id: "5",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/498076/1616184425996.png?imwidth=140&impolicy=hq", name: "Max Fashion", tooltip: "Max Fashion", url: "maxfashion.html"
+        },
+
+        {
+            id: "6",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/498091/1620736830834.png?imwidth=140&impolicy=hq", name: "U.S.Polo Assn.", tooltip: "U.S.Polo Assn.", url: "uspolo.html"
+        },
+
+        {
+            id: "7",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/994845/1643780245028.png?imwidth=140&impolicy=hq", name: "Brand Factory", tooltip: "Brand Factory", url: "brandfactory.html"
+        },
+
+        {
+            id: "8",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/498086/1610536486321.jpg?imwidth=140&impolicy=hq", name: "Levis", tooltip: "Levis", url: "levis.html"
+        },
+        {
+            id: "9",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/498239/1620736478260.jpg?imwidth=140&impolicy=hq", name: "ONLY", tooltip: "ONLY", url: "only.html"
+        },
+
+
+        {
+            id: "10",
+            img: "https://assetscdn1.paytm.com/images/catalog/view_item/498254/1610536539307.jpg?imwidth=140&impolicy=hq", name: "UCB", tooltip: "UCB", url: "ucb.html"
+        }
+    ];
+
+    function CruselData(c1) {
+
+        c1.forEach((el, index) => {
+            let card = document.createElement("div")
+            card.setAttribute('class', 'child')
+
+            let img = document.createElement("img")
+            img.setAttribute("src", el.img)
+
+            let name = document.createElement("h2")
+            name.innerText = el.name
+
+            card.append(img, name)
+
+            document.getElementById("crusel-1").append(card)
+
+        })
+    }
+
+
+    CruselData(c1)
+
+
+
+    src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"
+
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+</script>
